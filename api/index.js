@@ -195,7 +195,7 @@ app.put('/api/rentals', async (req,res) => {
     const rentalDoc = await Rental.findById(id);
     if (userData.id === rentalDoc.owner.toString()) {
       rentalDoc.set({
-        model, year,mileage, fuel, address, addedPhotos,
+        model, year,mileage, fuel, address, photos:addedPhotos,
         description, perks, availibilityStart, 
         availibilityEnd, capacity,price,
       });
